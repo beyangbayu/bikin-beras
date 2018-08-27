@@ -77,7 +77,7 @@ def generate_sets(img_type, grades):
     prediction_labels = []
 
     for grade in grades:
-        training, prediction = get_files(img_type, grade, 1) #1 disini ambil semua file jpg
+        training, prediction = get_files(img_type, grade, 1) 
 
         for item in training:
             image = cv2.imread(item)
@@ -161,7 +161,7 @@ def upload_file():
             print("Image shape: " + str(image.shape))
             processed_image = normalize_image(image, 2)
 
-            result = predict_image(processed_image, 'bw', grades, 1) #KNN diubah disini aja, tapi default nya 1
+            result = predict_image(processed_image, 'bw', grades, 1) 
             result_grade = grades[int(result)] #integer nya adalah 0 1 2 , jadi A B C
 
             # Cleanup
